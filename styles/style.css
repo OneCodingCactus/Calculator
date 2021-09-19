@@ -34,3 +34,8 @@ body{
     width: 400px;
     background-color: royalblue;
 }
+
+button{
+    height: 80px;
+    width: 90px;
+}

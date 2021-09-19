@@ -1,7 +1,6 @@
 let firstNumber;
 let secondNumber;
 
-
 function add(x,y){
     return x+y;
 }
@@ -34,8 +33,3 @@ function operate(num1, operator, num2){
     }
 }
 
-
-console.log(operate(5, "add", 5));
-console.log(operate(5, "subtract", 5));
-console.log(operate(5, "multiply", 5));
-console.log(operate(5, "divide", 5));

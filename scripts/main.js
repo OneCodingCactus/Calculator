@@ -18,8 +18,24 @@ function divide(x,y){
     return x/y;
 }
 
+function operate(num1, operator, num2){
+    switch(operator){
+        case "add":
+            return add(num1,num2);
 
-console.log(add(2,5));
-console.log(subtract(2,5));
-console.log(multiply(2,5));
-console.log(divide(2,5));
+        case "subtract":
+            return subtract(num1,num2);
+
+        case "multiply":
+            return multiply(num1,num2);
+
+        case "divide":
+            return divide(num1,num2);
+    }
+}
+
+
+console.log(operate(5, "add", 5));
+console.log(operate(5, "subtract", 5));
+console.log(operate(5, "multiply", 5));
+console.log(operate(5, "divide", 5));

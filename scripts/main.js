@@ -33,9 +33,19 @@ function operate(num1, operator, num2){
     }
 }
 
+const display=document.querySelector("#display");
 const numberButtons=document.querySelectorAll(".number");
+
+const IDs=["zero","one","two","three","four","five",
+"six","seven","eight","nine"];
+
+let displayValue="";
+
 numberButtons.forEach((button)=>{
     button.addEventListener("click", ()=> {
-        console.log("hello");
+        let numberValue=document.querySelector("#three").textContent;
+        displayValue+=numberValue;
+        display.textContent=displayValue;
     });
 });
+

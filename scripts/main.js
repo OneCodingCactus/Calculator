@@ -33,3 +33,9 @@ function operate(num1, operator, num2){
     }
 }
 
+const numberButtons=document.querySelectorAll(".number");
+numberButtons.forEach((button)=>{
+    button.addEventListener("click", ()=> {
+        console.log("hello");
+    });
+});

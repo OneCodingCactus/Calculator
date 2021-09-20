@@ -41,11 +41,13 @@ const IDs=["zero","one","two","three","four","five",
 
 let displayValue="";
 
-numberButtons.forEach((button)=>{
-    button.addEventListener("click", ()=> {
-        let numberValue=document.querySelector("#three").textContent;
+for(let i=0;i<10;i++){
+    let id=IDs[i];
+    document.getElementById(id).addEventListener("click", ()=> {
+        let numberValue=document.getElementById(id).textContent;
         displayValue+=numberValue;
         display.textContent=displayValue;
-    });
+        console.log(displayValue);
 });
-
+}
+    

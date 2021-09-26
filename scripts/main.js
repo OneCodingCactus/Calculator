@@ -1,5 +1,6 @@
 let firstNumber;
 let secondNumber;
+let operator;
 
 function add(x,y){
     return x+y;
@@ -19,16 +20,16 @@ function divide(x,y){
 
 function operate(num1, operator, num2){
     switch(operator){
-        case "add":
+        case "+":
             return add(num1,num2);
 
-        case "subtract":
+        case "-":
             return subtract(num1,num2);
 
-        case "multiply":
+        case "*":
             return multiply(num1,num2);
 
-        case "divide":
+        case "/":
             return divide(num1,num2);
     }
 }
@@ -50,4 +51,11 @@ for(let i=0;i<10;i++){
         console.log(displayValue);
 });
 }
-    
+
+const operators=document.querySelectorAll(".operator");
+operators.forEach((button)=>{
+    button.addEventListener("click",()=>{
+        operator=button.textContent;
+        console.log(operator);
+    })
+})

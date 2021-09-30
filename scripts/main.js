@@ -48,7 +48,6 @@ for(let i=0;i<10;i++){
         let numberValue=document.getElementById(id).textContent;
         displayValue+=numberValue;
         display.textContent=displayValue;
-        console.log(displayValue);
 });
 }
 
@@ -56,11 +55,8 @@ const operators=document.querySelectorAll(".operator");
 operators.forEach((button)=>{
     button.addEventListener("click",()=>{
         operator=button.textContent;
-        console.log(operator);
         firstNumber=displayValue;
-        console.log(firstNumber);
         displayValue="";
-        console.log(displayValue);
     })
 })
 
@@ -69,5 +65,6 @@ solution.addEventListener("click",()=>{
     secondNumber=displayValue;
     firstNumber=parseInt(firstNumber);
     secondNumber=parseInt(secondNumber);
-    display.textContent=operate(firstNumber, operator, secondNumber);
+    displayValue=operate(firstNumber, operator, secondNumber);
+    display.textContent=displayValue;
 })

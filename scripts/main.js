@@ -59,5 +59,15 @@ operators.forEach((button)=>{
         console.log(operator);
         firstNumber=displayValue;
         console.log(firstNumber);
+        displayValue="";
+        console.log(displayValue);
     })
+})
+
+const solution=document.querySelector(".solution");
+solution.addEventListener("click",()=>{
+    secondNumber=displayValue;
+    firstNumber=parseInt(firstNumber);
+    secondNumber=parseInt(secondNumber);
+    display.textContent=operate(firstNumber, operator, secondNumber);
 })

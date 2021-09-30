@@ -57,5 +57,7 @@ operators.forEach((button)=>{
     button.addEventListener("click",()=>{
         operator=button.textContent;
         console.log(operator);
+        firstNumber=displayValue;
+        console.log(firstNumber);
     })
 })

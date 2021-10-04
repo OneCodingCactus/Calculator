@@ -1,6 +1,7 @@
 let firstNumber;
 let secondNumber;
 let operator;
+let solutionDisplayed=false;
 
 function add(x,y){
     return x+y;
@@ -45,10 +46,16 @@ let displayValue="";
 for(let i=0;i<10;i++){
     let id=IDs[i];
     document.getElementById(id).addEventListener("click", ()=> {
+        if(solutionDisplayed==true){
+            firstNumber="";
+            secondNumber="";
+            solutionDisplayed=false;
+            displayValue="";
+        }
         let numberValue=document.getElementById(id).textContent;
         displayValue+=numberValue;
         display.textContent=displayValue;
-});
+    });
 }
 
 const operators=document.querySelectorAll(".operator");
@@ -67,4 +74,5 @@ solution.addEventListener("click",()=>{
     secondNumber=parseInt(secondNumber);
     displayValue=operate(firstNumber, operator, secondNumber);
     display.textContent=displayValue;
+    solutionDisplayed=true;
 })

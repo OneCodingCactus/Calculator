@@ -1,7 +1,9 @@
-let firstNumber;
-let secondNumber;
-let operator;
+let firstNumber="";
+let secondNumber="";
+let operator="";
 let solutionDisplayed=false;
+let operatorCount=0;
+
 
 function add(x,y){
     return x+y;
@@ -49,6 +51,7 @@ for(let i=0;i<10;i++){
         if(solutionDisplayed==true){
             firstNumber="";
             secondNumber="";
+            operator="";
             solutionDisplayed=false;
             displayValue="";
         }
@@ -64,6 +67,9 @@ operators.forEach((button)=>{
         if(solutionDisplayed==true){
             solutionDisplayed=false;
         }
+
+        operatorCount++;
+
         operator=button.textContent;
         firstNumber=displayValue;
         displayValue="";
@@ -78,4 +84,5 @@ solution.addEventListener("click",()=>{
     displayValue=operate(firstNumber, operator, secondNumber);
     display.textContent=displayValue;
     solutionDisplayed=true;
+    operatorCount=0;
 })

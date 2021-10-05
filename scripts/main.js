@@ -61,6 +61,9 @@ for(let i=0;i<10;i++){
 const operators=document.querySelectorAll(".operator");
 operators.forEach((button)=>{
     button.addEventListener("click",()=>{
+        if(solutionDisplayed==true){
+            solutionDisplayed=false;
+        }
         operator=button.textContent;
         firstNumber=displayValue;
         displayValue="";

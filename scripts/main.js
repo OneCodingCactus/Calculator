@@ -71,7 +71,6 @@ operators.forEach((button)=>{
         }
 
         operatorCount++;
-        operator=button.textContent;
 
         if(operatorCount>1){
             secondNumber=displayValue;
@@ -84,6 +83,7 @@ operators.forEach((button)=>{
         }else{
             firstNumber=displayValue;
         }
+        operator=button.textContent;
         displayValue="";
     })
 })

@@ -51,9 +51,9 @@ for(let i=0;i<10;i++){
         if(solutionDisplayed==true){
             if(operatorCount<2){
                 firstNumber="";
+                operator="";
             }
             secondNumber="";
-            operator="";
             solutionDisplayed=false;
             displayValue="";
         }
@@ -74,11 +74,9 @@ operators.forEach((button)=>{
         operator=button.textContent;
 
         if(operatorCount>1){
-            console.log("hello");
             secondNumber=displayValue;
             firstNumber=parseInt(firstNumber);
             secondNumber=parseInt(secondNumber);
-            console.log(firstNumber, operator, secondNumber);
             displayValue=operate(firstNumber, operator, secondNumber);
             display.textContent=displayValue;
             firstNumber=displayValue;

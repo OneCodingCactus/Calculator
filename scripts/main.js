@@ -49,7 +49,9 @@ for(let i=0;i<10;i++){
     let id=IDs[i];
     document.getElementById(id).addEventListener("click", ()=> {
         if(solutionDisplayed==true){
-            firstNumber="";
+            if(operatorCount<2){
+                firstNumber="";
+            }
             secondNumber="";
             operator="";
             solutionDisplayed=false;
@@ -69,9 +71,21 @@ operators.forEach((button)=>{
         }
 
         operatorCount++;
-
         operator=button.textContent;
-        firstNumber=displayValue;
+
+        if(operatorCount>1){
+            console.log("hello");
+            secondNumber=displayValue;
+            firstNumber=parseInt(firstNumber);
+            secondNumber=parseInt(secondNumber);
+            console.log(firstNumber, operator, secondNumber);
+            displayValue=operate(firstNumber, operator, secondNumber);
+            display.textContent=displayValue;
+            firstNumber=displayValue;
+            solutionDisplayed=true;
+        }else{
+            firstNumber=displayValue;
+        }
         displayValue="";
     })
 })

@@ -90,6 +90,9 @@ operators.forEach((button)=>{
             solutionDisplayed=true;
         }else{
             firstNumber=displayValue;
+            if(firstNumber==""){
+                firstNumber="0";
+            }
         }
         operator=button.textContent;
         displayValue="";

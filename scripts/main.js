@@ -106,5 +106,6 @@ clearButton.addEventListener("click", ()=>{
     operator="";
     solutionDisplayed=false;
     operatorCount=0;
-    displayValue=0;
+    displayValue="";
+    display.textContent=displayValue;
 })

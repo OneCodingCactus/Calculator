@@ -22,18 +22,28 @@ function divide(x,y){
 }
 
 function operate(num1, operator, num2){
+
+    let operateOutput;
     switch(operator){
         case "+":
-            return add(num1,num2);
+            operateOutput=add(num1,num2);
+            operateOutput= +operateOutput.toFixed(8);
+            return operateOutput;
 
         case "-":
-            return subtract(num1,num2);
+            operateOutput=subtract(num1,num2);
+            operateOutput= +operateOutput.toFixed(8);
+            return operateOutput;
 
         case "*":
-            return multiply(num1,num2);
+            operateOutput=multiply(num1,num2);
+            operateOutput= +operateOutput.toFixed(8);
+            return operateOutput;
 
         case "/":
-            return divide(num1,num2);
+            operateOutput=divide(num1,num2);
+            operateOutput= +operateOutput.toFixed(8);
+            return operateOutput;
     }
 }
 

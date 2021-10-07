@@ -86,7 +86,7 @@ operators.forEach((button)=>{
         operator=button.textContent;
         displayValue="";
     })
-})
+});
 
 const solution=document.querySelector(".solution");
 solution.addEventListener("click",()=>{
@@ -97,7 +97,7 @@ solution.addEventListener("click",()=>{
     display.textContent=displayValue;
     solutionDisplayed=true;
     operatorCount=0;
-})
+});
 
 const clearButton=document.querySelector(".clearButton");
 clearButton.addEventListener("click", ()=>{
@@ -108,4 +108,12 @@ clearButton.addEventListener("click", ()=>{
     operatorCount=0;
     displayValue="";
     display.textContent=displayValue;
+});
+
+const deleteButton=document.querySelector(".deleteButton");
+deleteButton.addEventListener("click",()=>{
+    displayValue=displayValue.toString();
+    displayValue=displayValue.slice(0, displayValue.length-1);
+    display.textContent=displayValue;
+    console.log(displayValue);
 })

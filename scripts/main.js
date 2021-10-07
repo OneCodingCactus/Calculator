@@ -82,12 +82,17 @@ operators.forEach((button)=>{
 
         if(operatorCount>1){
             secondNumber=displayValue;
-            firstNumber=parseInt(firstNumber);
-            secondNumber=parseInt(secondNumber);
-            displayValue=operate(firstNumber, operator, secondNumber);
-            display.textContent=displayValue;
-            firstNumber=displayValue;
-            solutionDisplayed=true;
+            if(secondNumber==="0" && operator=="/") {
+                solveDivisionByZero();
+            }else{
+                firstNumber=parseInt(firstNumber);
+                secondNumber=parseInt(secondNumber);
+                displayValue=operate(firstNumber, operator, secondNumber);
+                display.textContent=displayValue;
+                firstNumber=displayValue;
+                solutionDisplayed=true;
+            }
+
         }else{
             firstNumber=displayValue;
             if(firstNumber==""){
@@ -104,17 +109,10 @@ solution.addEventListener("click",()=>{
     secondNumber=displayValue;
 
     if(operator=="" || secondNumber==""){
-
+        console.log("bin ich etwa auch hier?");
     }
     else if(secondNumber==="0" && operator=="/") {
-        displayValue="Divided by 0";
-        display.textContent=displayValue;
-        firstNumber="";
-        secondNumber="";
-        operator="";
-        solutionDisplayed=false;
-        operatorCount=0;
-        displayValue="";
+        solveDivisionByZero();
     }
     else{
         firstNumber=parseFloat(firstNumber);
@@ -123,6 +121,7 @@ solution.addEventListener("click",()=>{
         display.textContent=displayValue;
         solutionDisplayed=true;
         operatorCount=0;
+        console.log("Solution displayed sollte jetzt stimmen");
     }
 });
 
@@ -147,14 +146,18 @@ deleteButton.addEventListener("click",()=>{
 const decimalPoint=document.querySelector("#decimalPoint");
 decimalPoint.addEventListener("click",()=>{
     let id="decimalPoint";
-    if(!displayValue.includes(".")){
+    displayValue=displayValue.toString();
+    if(displayValue.includes(".")==false){
+        console.log("hello");
         if(solutionDisplayed==true){
+            console.log("what happens here?");
             solutionDisplayed=false;
             firstNumber=displayValue;
             operator="";
         }
         if(displayValue==""){
             displayValue=0;
+            console.log("where am I?");
         }
         addCharacter(id);
     }
@@ -164,4 +167,15 @@ function addCharacter(id){
     let numberValue=document.getElementById(id).textContent;
     displayValue+=numberValue;
     display.textContent=displayValue;
+}
+
+function solveDivisionByZero(){
+    displayValue="Divided by 0";
+    display.textContent=displayValue;
+    firstNumber="";
+    secondNumber="";
+    operator="";
+    solutionDisplayed=false;
+    operatorCount=0;
+    displayValue="";
 }

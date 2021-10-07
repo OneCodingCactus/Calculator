@@ -118,6 +118,9 @@ deleteButton.addEventListener("click",()=>{
 const decimalPoint=document.querySelector("#decimalPoint");
 decimalPoint.addEventListener("click",()=>{
     let id="decimalPoint";
+    if(displayValue==""){
+        displayValue=0;
+    }
     addCharacter(id);
 })
 

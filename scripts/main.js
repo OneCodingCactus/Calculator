@@ -98,3 +98,13 @@ solution.addEventListener("click",()=>{
     solutionDisplayed=true;
     operatorCount=0;
 })
+
+const clearButton=document.querySelector(".clearButton");
+clearButton.addEventListener("click", ()=>{
+    firstNumber="";
+    secondNumber="";
+    operator="";
+    solutionDisplayed=false;
+    operatorCount=0;
+    displayValue=0;
+})

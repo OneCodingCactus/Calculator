@@ -57,9 +57,7 @@ for(let i=0;i<10;i++){
             solutionDisplayed=false;
             displayValue="";
         }
-        let numberValue=document.getElementById(id).textContent;
-        displayValue+=numberValue;
-        display.textContent=displayValue;
+        addCharacter(id);
     });
 }
 
@@ -115,5 +113,16 @@ deleteButton.addEventListener("click",()=>{
     displayValue=displayValue.toString();
     displayValue=displayValue.slice(0, displayValue.length-1);
     display.textContent=displayValue;
-    console.log(displayValue);
+});
+
+const decimalPoint=document.querySelector("#decimalPoint");
+decimalPoint.addEventListener("click",()=>{
+    let id="decimalPoint";
+    addCharacter(id);
 })
+
+function addCharacter(id){
+    let numberValue=document.getElementById(id).textContent;
+    displayValue+=numberValue;
+    display.textContent=displayValue;
+}

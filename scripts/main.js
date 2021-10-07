@@ -89,12 +89,17 @@ operators.forEach((button)=>{
 const solution=document.querySelector(".solution");
 solution.addEventListener("click",()=>{
     secondNumber=displayValue;
-    firstNumber=parseFloat(firstNumber);
-    secondNumber=parseFloat(secondNumber);
-    displayValue=operate(firstNumber, operator, secondNumber);
-    display.textContent=displayValue;
-    solutionDisplayed=true;
-    operatorCount=0;
+
+    if(operator=="" || secondNumber==""){
+
+    }else{
+        firstNumber=parseFloat(firstNumber);
+        secondNumber=parseFloat(secondNumber);
+        displayValue=operate(firstNumber, operator, secondNumber);
+        display.textContent=displayValue;
+        solutionDisplayed=true;
+        operatorCount=0;
+    }
 });
 
 const clearButton=document.querySelector(".clearButton");

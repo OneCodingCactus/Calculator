@@ -106,6 +106,12 @@ solution.addEventListener("click",()=>{
     else if(secondNumber==="0" && operator=="/") {
         displayValue="Divided by 0";
         display.textContent=displayValue;
+        firstNumber="";
+        secondNumber="";
+        operator="";
+        solutionDisplayed=false;
+        operatorCount=0;
+        displayValue="";
     }
     else{
         firstNumber=parseFloat(firstNumber);

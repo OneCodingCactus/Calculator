@@ -147,16 +147,18 @@ deleteButton.addEventListener("click",()=>{
 const decimalPoint=document.querySelector("#decimalPoint");
 decimalPoint.addEventListener("click",()=>{
     let id="decimalPoint";
-    if(solutionDisplayed==true){
-        solutionDisplayed=false;
-        firstNumber=displayValue;
-        operator="";
+    if(!displayValue.includes(".")){
+        if(solutionDisplayed==true){
+            solutionDisplayed=false;
+            firstNumber=displayValue;
+            operator="";
+        }
+        if(displayValue==""){
+            displayValue=0;
+        }
+        addCharacter(id);
     }
-    if(displayValue==""){
-        displayValue=0;
-    }
-    addCharacter(id);
-})
+});
 
 function addCharacter(id){
     let numberValue=document.getElementById(id).textContent;

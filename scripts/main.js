@@ -101,7 +101,7 @@ operators.forEach((button)=>{
         }
         operator=button.textContent;
         displayValue="";
-    })
+    });
 });
 
 const solution=document.querySelector(".solution");
@@ -126,20 +126,18 @@ solution.addEventListener("click",()=>{
 
 const clearButton=document.querySelector(".clearButton");
 clearButton.addEventListener("click", ()=>{
-    firstNumber="";
-    secondNumber="";
-    operator="";
-    solutionDisplayed=false;
-    operatorCount=0;
-    displayValue="";
-    display.textContent=displayValue;
+    clearAll();
 });
 
 const deleteButton=document.querySelector(".deleteButton");
 deleteButton.addEventListener("click",()=>{
-    displayValue=displayValue.toString();
-    displayValue=displayValue.slice(0, displayValue.length-1);
-    display.textContent=displayValue;
+    if(solutionDisplayed===true){
+        clearAll()
+    }else{
+        displayValue=displayValue.toString();
+        displayValue=displayValue.slice(0, displayValue.length-1);
+        display.textContent=displayValue;
+    }
 });
 
 const decimalPoint=document.querySelector("#decimalPoint");
@@ -174,4 +172,14 @@ function solveDivisionByZero(){
     solutionDisplayed=false;
     operatorCount=0;
     displayValue="";
+}
+
+function clearAll(){
+    firstNumber="";
+    secondNumber="";
+    operator="";
+    solutionDisplayed=false;
+    operatorCount=0;
+    displayValue="";
+    display.textContent=displayValue;
 }

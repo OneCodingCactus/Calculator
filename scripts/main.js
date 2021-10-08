@@ -109,7 +109,7 @@ solution.addEventListener("click",()=>{
     secondNumber=displayValue;
 
     if(operator=="" || secondNumber==""){
-        console.log("bin ich etwa auch hier?");
+
     }
     else if(secondNumber==="0" && operator=="/") {
         solveDivisionByZero();
@@ -121,7 +121,6 @@ solution.addEventListener("click",()=>{
         display.textContent=displayValue;
         solutionDisplayed=true;
         operatorCount=0;
-        console.log("Solution displayed sollte jetzt stimmen");
     }
 });
 
@@ -148,16 +147,13 @@ decimalPoint.addEventListener("click",()=>{
     let id="decimalPoint";
     displayValue=displayValue.toString();
     if(displayValue.includes(".")==false){
-        console.log("hello");
         if(solutionDisplayed==true){
-            console.log("what happens here?");
             solutionDisplayed=false;
             firstNumber=displayValue;
             operator="";
         }
         if(displayValue==""){
             displayValue=0;
-            console.log("where am I?");
         }
         addCharacter(id);
     }

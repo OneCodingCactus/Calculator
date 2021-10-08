@@ -81,6 +81,9 @@ operators.forEach((button)=>{
         operatorCount++;
 
         if(operatorCount>1){
+            if(firstNumber==""){
+                firstNumber="0";
+            }
             secondNumber=displayValue;
             if(secondNumber==="0" && operator=="/") {
                 solveDivisionByZero();
@@ -95,9 +98,7 @@ operators.forEach((button)=>{
 
         }else{
             firstNumber=displayValue;
-            if(firstNumber==""){
-                firstNumber="0";
-            }
+
         }
         operator=button.textContent;
         displayValue="";
@@ -115,6 +116,9 @@ solution.addEventListener("click",()=>{
         solveDivisionByZero();
     }
     else{
+        if(firstNumber==""){
+            firstNumber="0";
+        }
         firstNumber=parseFloat(firstNumber);
         secondNumber=parseFloat(secondNumber);
         displayValue=operate(firstNumber, operator, secondNumber);

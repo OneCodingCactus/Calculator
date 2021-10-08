@@ -85,8 +85,8 @@ operators.forEach((button)=>{
             if(secondNumber==="0" && operator=="/") {
                 solveDivisionByZero();
             }else{
-                firstNumber=parseInt(firstNumber);
-                secondNumber=parseInt(secondNumber);
+                firstNumber=parseFloat(firstNumber);
+                secondNumber=parseFloat(secondNumber);
                 displayValue=operate(firstNumber, operator, secondNumber);
                 display.textContent=displayValue;
                 firstNumber=displayValue;

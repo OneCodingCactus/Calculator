@@ -85,6 +85,9 @@ operators.forEach((button)=>{
                 firstNumber="0";
             }
             secondNumber=displayValue;
+            if(secondNumber==""){
+                secondNumber=0;
+            }
             if(secondNumber==="0" && operator=="/") {
                 solveDivisionByZero();
             }else{
@@ -125,6 +128,7 @@ solution.addEventListener("click",()=>{
         display.textContent=displayValue;
         solutionDisplayed=true;
         operatorCount=0;
+        operator="";
     }
 });
 

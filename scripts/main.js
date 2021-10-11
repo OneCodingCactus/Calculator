@@ -161,6 +161,17 @@ decimalPoint.addEventListener("click",()=>{
     }
 });
 
+const plusMinus=document.querySelector("#plusMinus");
+plusMinus.addEventListener("click",()=>{
+    displayValue=displayValue.toString();
+    if(displayValue.includes("-")==true){
+        displayValue=displayValue.slice(1);
+    }else{
+        displayValue="-"+displayValue;
+    }
+    display.textContent=displayValue;
+});
+
 function addCharacter(id){
     let numberValue=document.getElementById(id).textContent;
     displayValue+=numberValue;

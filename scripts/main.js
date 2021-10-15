@@ -131,7 +131,12 @@ solution.addEventListener("click",()=>{
         secondNumber=parseFloat(secondNumber);
         displayValue=operate(firstNumber, operator, secondNumber);
         displayValue=trimSolution(displayValue);
-        display.textContent=displayValue;
+        if(displayValue.length>9){
+            displayValue="";
+            display.textContent="Overflow";
+        }else{
+            display.textContent=displayValue;
+        }
         solutionDisplayed=true;
         operatorCount=0;
         operator="";

@@ -13,8 +13,8 @@ body{
 }
 
 #container{
-    height: 500px;
-    width: 400px;
+    height: 512px;
+    width: 385x;
     border: 1px;
     border-style: solid;
     border-color: black;
@@ -22,20 +22,29 @@ body{
 
 #display{
     height: 80px;
-    width: 370px;
+    width: 360px;
     border: 1px;
     border-style: solid;
     border-color: black;
-    margin: 10px 15px;
+    margin: 10px 13px;
 }
 
 #buttonContainer{
     height: 400px;
-    width: 400px;
+    width: 360px;
+    margin: 0 auto;
     background-color: royalblue;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 button{
     height: 80px;
     width: 90px;
 }
+/*
+.solution{
+    height: 160px;
+    position: absolute;
+}
+*/

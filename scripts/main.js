@@ -196,7 +196,7 @@ function addCharacter(id){
 }
 
 function solveDivisionByZero(){
-    displayValue="Divided by 0";
+    displayValue="DivisionBy0";
     display.textContent=displayValue;
     firstNumber="";
     secondNumber="";
@@ -213,7 +213,7 @@ function clearAll(){
     solutionDisplayed=false;
     operatorCount=0;
     displayValue="";
-    display.textContent=displayValue;
+    display.textContent="0";
 }
 
 function trimSolution(myNumber){

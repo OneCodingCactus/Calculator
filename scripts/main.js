@@ -177,9 +177,11 @@ plusMinus.addEventListener("click",()=>{
 });
 
 function addCharacter(id){
-    let numberValue=document.getElementById(id).textContent;
-    displayValue+=numberValue;
-    display.textContent=displayValue;
+    if(displayValue.length<9){
+        let numberValue=document.getElementById(id).textContent;
+        displayValue+=numberValue;
+        display.textContent=displayValue;
+    }
 }
 
 function solveDivisionByZero(){

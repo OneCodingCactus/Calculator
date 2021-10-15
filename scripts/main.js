@@ -28,23 +28,28 @@ function operate(num1, operator, num2){
         case "+":
             operateOutput=add(num1,num2);
             operateOutput= +operateOutput.toFixed(8);
+            operateOutput=trimSolution(operateOutput);
             return operateOutput;
 
         case "-":
             operateOutput=subtract(num1,num2);
             operateOutput= +operateOutput.toFixed(8);
+            operateOutput=trimSolution(operateOutput);
             return operateOutput;
 
         case "*":
             operateOutput=multiply(num1,num2);
             operateOutput= +operateOutput.toFixed(8);
+            operateOutput=trimSolution(operateOutput);
             return operateOutput;
 
         case "/":
             operateOutput=divide(num1,num2);
             operateOutput= +operateOutput.toFixed(8);
+            operateOutput=trimSolution(operateOutput);
             return operateOutput;
     }
+    
 }
 
 const display=document.querySelector("#display");
@@ -125,6 +130,7 @@ solution.addEventListener("click",()=>{
         firstNumber=parseFloat(firstNumber);
         secondNumber=parseFloat(secondNumber);
         displayValue=operate(firstNumber, operator, secondNumber);
+        displayValue=trimSolution(displayValue);
         display.textContent=displayValue;
         solutionDisplayed=true;
         operatorCount=0;
@@ -203,4 +209,14 @@ function clearAll(){
     operatorCount=0;
     displayValue="";
     display.textContent=displayValue;
+}
+
+function trimSolution(myNumber){
+    myNumber=myNumber.toString();
+    if(myNumber.length>9){
+        while(myNumber.includes(".")==true && myNumber.length>9){
+            myNumber=myNumber.slice(0,-1);
+        }
+    }
+    return myNumber;
 }
